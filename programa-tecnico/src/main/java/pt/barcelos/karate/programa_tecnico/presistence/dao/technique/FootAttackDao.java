@@ -1,23 +1,30 @@
 package pt.barcelos.karate.programa_tecnico.presistence.dao.technique;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 @Setter
 @Getter
 @Entity
-public class FootAttackDao extends TechniqueDao {
+@Table(name = "foot_attacks")
+public class FootAttackDao
+{
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
+    private String name;
+    private String description;
+    private String videoLink;
+    private String imageLink;
+
     public FootAttackDao(String name, String description, String videoLink, String imageLink) {
-        super(name, description, videoLink, imageLink);
+        this.name = name;
+        this.description = description;
+        this.videoLink = videoLink;
+        this.imageLink = imageLink;
     }
 
     public FootAttackDao() {

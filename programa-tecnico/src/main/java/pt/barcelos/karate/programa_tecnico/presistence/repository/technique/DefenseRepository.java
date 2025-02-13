@@ -6,4 +6,5 @@ import pt.barcelos.karate.programa_tecnico.presistence.dao.technique.DefenseDao;
 
 @Repository
 public interface DefenseRepository extends JpaRepository<DefenseDao, Long> {
+    DefenseDao findByName(String name);
 }

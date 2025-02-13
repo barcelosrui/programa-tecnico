@@ -6,4 +6,6 @@ import pt.barcelos.karate.programa_tecnico.presistence.dao.technique.PositionDao
 
 @Repository
 public interface PositionRepository extends JpaRepository<PositionDao, Long> {
+
+    PositionDao findByName(String name);
 }
